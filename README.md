@@ -8,7 +8,7 @@ Brigade Road, Bangalore Store
 
 ```bash
 # 1. Clone and enter project
-git clone <your-repo>
+git clone https://github.com/pujaux/Store-intelligence
 cd store-intelligence
 
 # 2. Add your CCTV footage
