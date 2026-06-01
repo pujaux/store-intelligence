@@ -83,31 +83,34 @@ pytest tests/ -v
 ---
 
 ## Project Structure
+
+```
 Store-intelligence/
 ├── app/
-│   ├── main.py            # FastAPI application + all endpoints
-│   ├── event_store.py     # Event loading, metrics, funnel, anomalies
-│   ├── anomalies.py       # Anomaly detection logic
-│   ├── health.py          # Health endpoint + STALE_FEED check
-│   ├── ingestion.py       # Event ingest + deduplication
-│   ├── metrics.py         # Real-time metric computation
-│   └── models.py          # Pydantic event schema
+│   ├── main.py              # FastAPI application + all endpoints
+│   ├── event_store.py       # Event loading, metrics, funnel, anomalies
+│   ├── anomalies.py         # Anomaly detection logic
+│   ├── health.py            # Health endpoint + STALE_FEED check
+│   ├── ingestion.py         # Event ingest + deduplication
+│   ├── metrics.py           # Real-time metric computation
+│   └── models.py            # Pydantic event schema
 ├── detection/
-│   ├── pipeline.py        # YOLOv8 detection + centroid tracking
-│   └── camera_config.py   # Camera zone configuration
+│   ├── pipeline.py          # YOLOv8 detection + centroid tracking
+│   └── camera_config.py     # Camera zone configuration
 ├── tests/
-│   └── test_api.py        # API integration tests (29 passing)
-├── footage/               # Place CCTV video files here
-├── events/                # Pipeline writes events.json here
-├── logs/                  # Application logs
-├── pipeline/              # Pipeline utilities
-├── pos_transactions.csv   # Real Brigade Road POS data (24 orders, ₹44,920 GMV)
-├── store_layout.json      # Zone definitions for ST1008
-├── DESIGN.md              # System architecture + AI-Assisted Decisions
-├── CHOICES.md             # Engineering decisions + trade-offs
+│   └── test_api.py          # API integration tests (29 passing)
+├── footage/                 # Place CCTV video files here
+├── events/                  # Pipeline writes events.json here
+├── logs/                    # Application logs
+├── pipeline/                # Pipeline utilities
+├── pos_transactions.csv     # Real Brigade Road POS data (24 orders, ₹44,920 GMV)
+├── store_layout.json        # Zone definitions for ST1008
+├── DESIGN.md                # System architecture + AI-Assisted Decisions
+├── CHOICES.md               # Engineering decisions + trade-offs
 ├── docker-compose.yml
 ├── Dockerfile
 └── requirements.txt
+```
 
 ---
 
