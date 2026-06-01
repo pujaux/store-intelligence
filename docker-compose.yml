@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  store-intelligence:
+    build: .
+    container_name: store-intelligence
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./footage:/app/footage
+      - ./events:/app/events
+      - ./logs:/app/logs
+    environment:
+      - FOOTAGE_DIR=/app/footage
+      - EVENTS_DIR=/app/events
+      - LOG_LEVEL=INFO
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped

@@ -1,0 +1,119 @@
+{
+  "store_id": "STORE_BLR_002",
+  "store_name": "Brigade Road, Bangalore",
+  "open_hours": {
+    "open": "10:00",
+    "close": "21:00"
+  },
+  "cameras": {
+    "CAM_ENTRY_01": {
+      "camera_id": "CAM_ENTRY_01",
+      "original_name": "CAM 1",
+      "role": "entry_exit",
+      "zones_covered": [
+        "ENTRY",
+        "EXIT"
+      ],
+      "is_entry_cam": true
+    },
+    "CAM_FLOOR_01": {
+      "camera_id": "CAM_FLOOR_01",
+      "original_name": "CAM 2",
+      "role": "main_floor",
+      "zones_covered": [
+        "SKINCARE",
+        "HAIRCARE",
+        "MAKEUP"
+      ],
+      "is_entry_cam": false
+    },
+    "CAM_FLOOR_02": {
+      "camera_id": "CAM_FLOOR_02",
+      "original_name": "CAM 3",
+      "role": "main_floor_2",
+      "zones_covered": [
+        "FRAGRANCE",
+        "BATH_BODY",
+        "FOH"
+      ],
+      "is_entry_cam": false
+    },
+    "CAM_BILLING_01": {
+      "camera_id": "CAM_BILLING_01",
+      "original_name": "CAM 4",
+      "role": "billing",
+      "zones_covered": [
+        "BILLING",
+        "CASH_COUNTER"
+      ],
+      "is_entry_cam": false
+    },
+    "CAM_FLOOR_03": {
+      "camera_id": "CAM_FLOOR_03",
+      "original_name": "CAM 5",
+      "role": "makeup_unit",
+      "zones_covered": [
+        "MAKEUP_UNIT",
+        "PMU"
+      ],
+      "is_entry_cam": false
+    }
+  },
+  "zones": {
+    "ENTRY": {
+      "zone_id": "ENTRY",
+      "label": "Entry/Exit Door",
+      "sku_zone": null
+    },
+    "FOH": {
+      "zone_id": "FOH",
+      "label": "Front of House",
+      "sku_zone": null
+    },
+    "SKINCARE": {
+      "zone_id": "SKINCARE",
+      "label": "Skincare",
+      "sku_zone": "SKINCARE"
+    },
+    "MAKEUP": {
+      "zone_id": "MAKEUP",
+      "label": "Makeup",
+      "sku_zone": "MAKEUP"
+    },
+    "MAKEUP_UNIT": {
+      "zone_id": "MAKEUP_UNIT",
+      "label": "Makeup Island",
+      "sku_zone": "MAKEUP"
+    },
+    "HAIRCARE": {
+      "zone_id": "HAIRCARE",
+      "label": "Hair Care",
+      "sku_zone": "HAIRCARE"
+    },
+    "FRAGRANCE": {
+      "zone_id": "FRAGRANCE",
+      "label": "Fragrance",
+      "sku_zone": "FRAGRANCE"
+    },
+    "BATH_BODY": {
+      "zone_id": "BATH_BODY",
+      "label": "Bath & Body",
+      "sku_zone": "BATH_BODY"
+    },
+    "BILLING": {
+      "zone_id": "BILLING",
+      "label": "Billing Counter",
+      "sku_zone": null
+    },
+    "CASH_COUNTER": {
+      "zone_id": "CASH_COUNTER",
+      "label": "Cash Counter",
+      "sku_zone": null
+    },
+    "PMU": {
+      "zone_id": "PMU",
+      "label": "PMU Zone",
+      "sku_zone": "MAKEUP"
+    }
+  }
+}
