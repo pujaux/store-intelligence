@@ -106,6 +106,29 @@ A customer rarely spends >5 minutes at the cash counter. A staff member almost a
 
 ---
 
+## AI-Assisted Decisions
+
+### Decision A: Event Schema Design
+**What AI suggested:** Flat schema with all fields at top level for simplicity.
+
+**What I chose:** Kept the nested `metadata` sub-object for `queue_depth`, `sku_zone`, and `session_seq`. The nested structure makes the schema extensible without breaking existing consumers. AI optimised for simplicity; I prioritised spec compliance and forward compatibility.
+
+---
+
+### Decision B: Ingest Idempotency Strategy
+**What AI suggested:** Use a database unique constraint on `event_id` and let the DB handle duplicates.
+
+**What I chose:** In-memory set for O(1) duplicate detection with periodic file persistence. For single-store batch processing, the memory approach has zero infrastructure overhead. If this were multi-store at scale, I'd switch to Redis SET membership or a DB unique index.
+
+---
+
+### Decision C: Heatmap Normalisation
+**What AI suggested:** Normalise by total visits across all zones so scores sum to 100.
+
+**What I chose:** Normalise by max zone visits so the busiest zone always scores 100 and others are relative to it. This is more useful for a retail manager — you want to know which zone is hottest relative to the others, not what fraction of all visits each zone captured.
+
+---
+
 ## What I Would Do with More Time
 
 1. **ByteTrack integration** — replace the centroid tracker for better occlusion handling
@@ -114,3 +137,5 @@ A customer rarely spends >5 minutes at the cash counter. A staff member almost a
 4. **Historical comparison** — store daily summaries to compare conversion across weeks
 5. **Camera calibration** — map pixel coordinates to real-world coordinates using homography, for more accurate dwell-zone mapping
 6. **Re-ID across cameras** — if multiple CCTV cameras cover the store, use appearance embeddings to track the same person across views
+---
+
